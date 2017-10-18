@@ -55,7 +55,7 @@ class Article
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="Section", inversedBy="article")
+     * @ORM\ManyToMany(targetEntity="Section")
      * @ORM\JoinTable(name="article_has_section",
      *   joinColumns={
      *     @ORM\JoinColumn(name="article_id", referencedColumnName="id")

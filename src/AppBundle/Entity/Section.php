@@ -31,7 +31,15 @@ class Section
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="Article", mappedBy="section")
+     * @ORM\ManyToMany(targetEntity="Article")
+     * @ORM\JoinTable(name="article_has_section",
+     *   joinColumns={
+     *     @ORM\JoinColumn(name="section_id", referencedColumnName="id")
+     *   },
+     *   inverseJoinColumns={
+     *     @ORM\JoinColumn(name="article_id", referencedColumnName="id")
+     *   }
+     * )
      */
     private $article;
 
