@@ -23,4 +23,19 @@ class DefaultController extends Controller
             'sections' => $sections
         ));
     }
+    /**
+     * @Route("/section/{id}", name="sections")
+     */
+    public function sectionAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $articles = $em->getRepository('AppBundle:Article')->findAll();
+        $sections = $em->getRepository('AppBundle:Section')->findAll();
+
+        return $this->render('default/index.html.twig', array(
+            'articles' => $articles,
+            'sections' => $sections
+        ));
+    }
 }

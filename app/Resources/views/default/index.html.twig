@@ -2,7 +2,7 @@
 
 {% block menu %}
 {% for s in sections %}
-<a href="#">{{ s.thetitle }}</a> -
+<a href="{{ path("sections",{ 'id': s.id }) }}">{{ s.thetitle }}</a> -
 {% endfor %}<hr/>
 {% endblock %}
 {% block body %}
@@ -14,7 +14,7 @@
     <h4>{# Si il y a des sections (pas vide) #}
         {% if not a.section.empty %}
                 {% for c in a.section %}
-                    <a href="#">{{ c.thetitle }}</a>
+                    <a href="{{ path("sections",{ 'id': c.id }) }}">{{ c.thetitle }}</a>
                 {% endfor %}
         {% endif %}</h4><hr/>
 <p>{{ a.thetext }}</p>
