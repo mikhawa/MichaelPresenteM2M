@@ -1,5 +1,23 @@
 {% extends 'base.html.twig' %}
 
+{% block menu %}
+{% for s in sections %}
+<a href="#">{{ s.thetitle }}</a> -
+{% endfor %}<hr/>
+{% endblock %}
 {% block body %}
-
+    <h1>accueil</h1>
+{% for a in articles %}
+<hr/>
+<h2>{{ a.thetitle }}</h2>
+    <hr/>
+    <h4>{# Si il y a des sections (pas vide) #}
+        {% if not a.section.empty %}
+                {% for c in a.section %}
+                    <a href="#">{{ c.thetitle }}</a>
+                {% endfor %}
+        {% endif %}</h4><hr/>
+<p>{{ a.thetext }}</p>
+<p>{{ a.thedate|date("Y-m-d H:i:s") }} par {{ a.util.login }}</p>
+{% endfor %}
 {% endblock %}
