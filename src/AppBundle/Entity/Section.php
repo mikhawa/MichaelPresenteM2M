@@ -43,6 +43,10 @@ class Section
         $this->article = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
+    public function __toString()
+    {
+        return $this->thetitle;
+    }
 
     /**
      * Get id

@@ -36,6 +36,10 @@ class Util
     private $pwd;
 
 
+    public function __toString()
+    {
+        return $this->login;
+    }
 
     /**
      * Get id
