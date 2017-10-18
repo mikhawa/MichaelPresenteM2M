@@ -43,5 +43,72 @@ class Section
         $this->article = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
-}
 
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set thetitle
+     *
+     * @param string $thetitle
+     *
+     * @return Section
+     */
+    public function setThetitle($thetitle)
+    {
+        $this->thetitle = $thetitle;
+
+        return $this;
+    }
+
+    /**
+     * Get thetitle
+     *
+     * @return string
+     */
+    public function getThetitle()
+    {
+        return $this->thetitle;
+    }
+
+    /**
+     * Add article
+     *
+     * @param \AppBundle\Entity\Article $article
+     *
+     * @return Section
+     */
+    public function addArticle(\AppBundle\Entity\Article $article)
+    {
+        $this->article[] = $article;
+
+        return $this;
+    }
+
+    /**
+     * Remove article
+     *
+     * @param \AppBundle\Entity\Article $article
+     */
+    public function removeArticle(\AppBundle\Entity\Article $article)
+    {
+        $this->article->removeElement($article);
+    }
+
+    /**
+     * Get article
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getArticle()
+    {
+        return $this->article;
+    }
+}

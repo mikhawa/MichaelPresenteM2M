@@ -75,5 +75,144 @@ class Article
         $this->section = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
-}
 
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set thetitle
+     *
+     * @param string $thetitle
+     *
+     * @return Article
+     */
+    public function setThetitle($thetitle)
+    {
+        $this->thetitle = $thetitle;
+
+        return $this;
+    }
+
+    /**
+     * Get thetitle
+     *
+     * @return string
+     */
+    public function getThetitle()
+    {
+        return $this->thetitle;
+    }
+
+    /**
+     * Set thetext
+     *
+     * @param string $thetext
+     *
+     * @return Article
+     */
+    public function setThetext($thetext)
+    {
+        $this->thetext = $thetext;
+
+        return $this;
+    }
+
+    /**
+     * Get thetext
+     *
+     * @return string
+     */
+    public function getThetext()
+    {
+        return $this->thetext;
+    }
+
+    /**
+     * Set thedate
+     *
+     * @param \DateTime $thedate
+     *
+     * @return Article
+     */
+    public function setThedate($thedate)
+    {
+        $this->thedate = $thedate;
+
+        return $this;
+    }
+
+    /**
+     * Get thedate
+     *
+     * @return \DateTime
+     */
+    public function getThedate()
+    {
+        return $this->thedate;
+    }
+
+    /**
+     * Set util
+     *
+     * @param \AppBundle\Entity\Util $util
+     *
+     * @return Article
+     */
+    public function setUtil(\AppBundle\Entity\Util $util = null)
+    {
+        $this->util = $util;
+
+        return $this;
+    }
+
+    /**
+     * Get util
+     *
+     * @return \AppBundle\Entity\Util
+     */
+    public function getUtil()
+    {
+        return $this->util;
+    }
+
+    /**
+     * Add section
+     *
+     * @param \AppBundle\Entity\Section $section
+     *
+     * @return Article
+     */
+    public function addSection(\AppBundle\Entity\Section $section)
+    {
+        $this->section[] = $section;
+
+        return $this;
+    }
+
+    /**
+     * Remove section
+     *
+     * @param \AppBundle\Entity\Section $section
+     */
+    public function removeSection(\AppBundle\Entity\Section $section)
+    {
+        $this->section->removeElement($section);
+    }
+
+    /**
+     * Get section
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getSection()
+    {
+        return $this->section;
+    }
+}
