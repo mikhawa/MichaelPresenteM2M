@@ -37,11 +37,11 @@ class DefaultController extends Controller
         // les articles
         $repository = $em->getRepository('AppBundle:Article');
         $articles = $repository->createQueryBuilder('a')
-            ->innerJoin('a.section', 'g')
-            ->where('g.id = :idactu')
+            ->innerJoin('a.section', 's')
+            ->where('s.id = :idactu')
             ->setParameter('idactu', $id)
             ->getQuery()->getResult();
-        dump($articles);
+        //dump($articles);
         // menu
         $sections = $em->getRepository('AppBundle:Section')->findAll();
 
